@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    
+    <!-- These below beans gets save into the spring container which we will be making in the java src files -->    
+    
+    <bean id = "honda" class = "com.shrums.Car">
+    <property name = "name" value = "honda" />
+    <property name = "color" value = "silver" />
+    <property name = "price" value = "16000.0" />
+    <property name = "make" value = "civic" />
+    <property name = "fuelType" ref = "gas" />
+    <!-- this "ref" means this bean is depended upon some other bean down there -->
+    
+    </bean>
+    <!-- /SpringPractise/src/main/java/com/shrums/Car.java -->
+    
+    <bean id = "toyota" class = "com.shrums.Car">
+    <property name = "name" value = "toyota" />
+    <property name = "color" value = "brown" />
+    <property name = "price" value = "27000.0" />
+    <property name = "make" value = "camry" />
+    <property name = "fuelType" ref = "gas" />
+    
+    
+    </bean>
+    
+    <bean id = "gas" class = "com.shrums.FuelType">
+    <property name = "gasoline" value = "gas" />
+    <property name = "gallons" value = "20 gals" />
+    
+    
+    </bean>
+        
+        
+</beans>
