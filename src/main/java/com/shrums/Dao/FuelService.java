@@ -1,4 +1,4 @@
-package Dao;
+package com.shrums.dao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import com.shrums.FuelType;
+import com.shrums.entity.FuelType;
 
 
 @Service("fuelService")
@@ -16,11 +16,11 @@ public class FuelService {
 	
 	
 	@Autowired
-	//@Qualifier("tmealDao")
+	//@Qualifier("fuelTypeDao")   
+	// This Qualifier takes the reference of the FueltypeDao, which I normally set the similar name
+	
 	private FuelTypeDao fuelTypeDao;
-	
-	
-	
+
 	public FuelTypeDao getFuelTypeDao() {
 		return fuelTypeDao;
 	}

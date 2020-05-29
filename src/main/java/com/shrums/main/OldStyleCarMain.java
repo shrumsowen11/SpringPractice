@@ -1,6 +1,6 @@
 package com.shrums.main;
 
-import com.shrums.Car;
+import com.shrums.entity.Car;
 
 public class OldStyleCarMain {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.shrums;
+package com.shrums.entity;
 
 import java.sql.Timestamp;
 

@@ -5,7 +5,8 @@ import java.util.Scanner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.shrums.Dao.FuelService;
+import com.shrums.dao.FuelService;
+
 
 
 public class InsertFuelType {

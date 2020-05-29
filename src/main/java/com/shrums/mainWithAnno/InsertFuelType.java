@@ -5,7 +5,7 @@ import java.util.Scanner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.shrums.Dao.FuelService;
+import com.shrums.dao.FuelService;
 
 
 public class InsertFuelType {
@@ -17,7 +17,7 @@ public class InsertFuelType {
 
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the gas type: ");
-		String gzasType = scan.nextLine();
+		String gasType = scan.nextLine();
 		
 		System.out.println("Enter the num of gallons/How many: ");
 		int gallons = scan.nextInt();

@@ -1,4 +1,4 @@
-package Dao;
+package com.shrums.dao;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.shrums.FuelType;
+import com.shrums.entity.FuelType;
 
 
 
@@ -23,9 +23,25 @@ import com.shrums.FuelType;
  */
 
 @Repository("fuelTypeDao")
+/*
+ * Using "@Repository("fuelTypeDao")", we are making the bean/object
+ * Now, we will not have to make the beans in the .xml file instead of which
+ * 
+ * "<context:component-scan base-package="com.shrums.Dao"/>" which will be 
+ * looking for the "@ANNOTATIONS" presence in the .java files
+ */
+
+
 public class FuelTypeDao {
 	
-	@Autowired
+	@Autowired  
+	/*  ************We were doing like this ****************
+	 * <bean id = "fuelTypeObject" name = "www.fueltype.com,www.ft.com" class =
+	 * "com.shrums.Dao.FuelTypeDao"> <property name="jdbcTemplate" ref =
+	 * "jdbcTemplateForConnection"/>
+	 * </bean>
+	 * Now, to inject the jdbcTemplate into the Fueltypedao class, we use the "@Autowired"
+	 */
 	private JdbcTemplate jdbcTemplate;
 
 	public JdbcTemplate getJdbcTemplate() {

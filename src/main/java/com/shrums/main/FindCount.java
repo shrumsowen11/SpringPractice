@@ -4,13 +4,15 @@ package com.shrums.main;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.shrums.Dao.FuelService;
+import com.shrums.dao.FuelService;
+
+
 
 public class FindCount {
 	
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("fuel-dao.xml");
-		fuelServ fuelService = (FuelService) applicationContext.getBean("fuelService");
+		FuelService fuelService = (FuelService) applicationContext.getBean("fuelService");
 		
 
 		int count = fuelService.findCount();
