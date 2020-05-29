@@ -61,7 +61,7 @@
     
     	<!-- ******************** My Notes ***************  -->
     	<!-- you can use more than one .xml files
-    		For Example:  in this cas, you can seperate the above files with one with
+    		For Example:  in this case, you can seperate the above files with one with
     		only getting the database connections and one with user made classes
     		In this case, you will have to import the second .xml files into 
     		one main .xml file which you are calling in your .java file

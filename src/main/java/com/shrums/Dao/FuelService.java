@@ -15,6 +15,14 @@ import com.shrums.entity.FuelType;
 public class FuelService {
 	
 	
+	/**
+	 * Four types of Autowired
+	 *  no 
+	 *  byType
+	 *  byName
+	 *  byConstrcutor
+	 */
+	
 	@Autowired
 	//@Qualifier("fuelTypeDao")   
 	// This Qualifier takes the reference of the FueltypeDao, which I normally set the similar name

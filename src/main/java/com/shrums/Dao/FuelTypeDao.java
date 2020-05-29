@@ -35,13 +35,17 @@ import com.shrums.entity.FuelType;
 public class FuelTypeDao {
 	
 	@Autowired  
+	
+	
 	/*  ************We were doing like this ****************
 	 * <bean id = "fuelTypeObject" name = "www.fueltype.com,www.ft.com" class =
 	 * "com.shrums.Dao.FuelTypeDao"> <property name="jdbcTemplate" ref =
 	 * "jdbcTemplateForConnection"/>
 	 * </bean>
-	 * Now, to inject the jdbcTemplate into the Fueltypedao class, we use the "@Autowired"
+	 * Now, to inject or to do the Inversion of Control(IOC) the jdbcTemplate into the Fueltypedao class, we use the "@Autowired"
 	 */
+	
+	
 	private JdbcTemplate jdbcTemplate;
 
 	public JdbcTemplate getJdbcTemplate() {
