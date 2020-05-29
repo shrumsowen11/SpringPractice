@@ -48,7 +48,7 @@ public class FuelTypeDao {
 		
 		/* 
 		 * The last attribute of the methods like .update, .query, . queryForObject are to return the 
-		 * type of the object requested.
+		 * type of the object requested. by the "sql"
 		 * For Example: the above   "new Object[] {fuelType.getGas(),fuelType.getGallons(),
 				new Timestamp(new Date().getTime())}" ->> returns the object array of the FuelType
 		 *  
@@ -61,6 +61,15 @@ public class FuelTypeDao {
 	public List<FuelType> findAll() {
 		 List<FuelType> fuelTypes = jdbcTemplate.query("select fid, gas, gallons, createDate from fuel_type_tbl",
 				 new BeanPropertyRowMapper(FuelType.class));
+			/*
+			 *  Here, the last attribute returns the FuelType Object which is 
+			 *  requested by the "sql" here and starts making
+			 *  list of that object and then, if there // are more than one FuelType
+			 *  Object, then it start ******* mapping ******* them into a List
+			 *  and therefore, returns the list at the end
+			 *  
+			 */		 
+			
 		 return  fuelTypes;
 	}
 	
@@ -68,6 +77,11 @@ public class FuelTypeDao {
 		FuelType fuelType=(FuelType)jdbcTemplate.queryForObject("select fid, gas, gallos, createDate"
 				+ " from fuel_type_tbl where fid=?",
 				 new Object[] {fid},new BeanPropertyRowMapper(FuelType.class));
+		/* here, the last attribute of the jdbcTemplate is asking for only one item(one  FuelTypeEntity)
+		 * through the "sql", so therefore, the "new BeanPropertyRowMapper(FuelType.class)" is using
+		 * the FuelType.class to get the FuelType class object
+		 *  */
+	
 		 return  fuelType;
 	}
 
