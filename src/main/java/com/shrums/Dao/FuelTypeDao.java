@@ -42,7 +42,13 @@ public class FuelTypeDao {
 	 * "com.shrums.Dao.FuelTypeDao"> <property name="jdbcTemplate" ref =
 	 * "jdbcTemplateForConnection"/>
 	 * </bean>
-	 * Now, to inject or to do the Inversion of Control(IOC) the jdbcTemplate into the Fueltypedao class, we use the "@Autowired"
+	 * 
+	 * 	<bean id = "fuelService"  class = "com.shrums.Dao.FuelService">
+ 	 *	<property name = "fuelTypeDao" ref = "fuelTypeObject"/>
+     *	</bean>
+	 * 
+	 * 
+	 * Now, to inject or to do the Inversion of Control(IOC) the jdbcTemplate into the FuelTypeDao class, we use the "@Autowired"
 	 */
 	
 	
@@ -66,13 +72,14 @@ public class FuelTypeDao {
 		jdbcTemplate.update(sql,new Object[] {fuelType.getGas(),fuelType.getGallons(),
 				new Timestamp(new Date().getTime())});
 		
-		/* 
-		 * The last attribute of the methods like .update, .query, . queryForObject are to return the 
-		 * type of the object requested. by the "sql"
-		 * For Example: the above   "new Object[] {fuelType.getGas(),fuelType.getGallons(),
-				new Timestamp(new Date().getTime())}" ->> returns the object array of the FuelType
+		/* .query 			-->	returns a List of any size
+		 * .queryForObject 	--> returns one object
+		 * .update 			-->	updates the data	
+		 *
+		 * the above   "new Object[] {fuelType.getGas(),fuelType.getGallons(),
+		 *		new Timestamp(new Date().getTime())}" ->> passed into the sql.
 		 *  
-		 *  */
+		 */
 		System.out.println(fuelType);
 		
 	}
@@ -80,7 +87,7 @@ public class FuelTypeDao {
 	
 	public List<FuelType> findAll() {
 		 List<FuelType> fuelTypes = jdbcTemplate.query("select fid, gas, gallons, createDate from fuel_type_tbl",
-				 new BeanPropertyRowMapper(FuelType.class));
+				 new BeanPropertyRowMapper<>(FuelType.class));
 			/*
 			 *  Here, the last attribute returns the FuelType Object which is 
 			 *  requested by the "sql" here and starts making
@@ -96,7 +103,7 @@ public class FuelTypeDao {
 	public FuelType findById(int fid) {
 		FuelType fuelType=(FuelType)jdbcTemplate.queryForObject("select fid, gas, gallos, createDate"
 				+ " from fuel_type_tbl where fid=?",
-				 new Object[] {fid},new BeanPropertyRowMapper(FuelType.class));
+				 new Object[] {fid},new BeanPropertyRowMapper<>(FuelType.class));
 		/* here, the last attribute of the jdbcTemplate is asking for only one item(one  FuelTypeEntity)
 		 * through the "sql", so therefore, the "new BeanPropertyRowMapper(FuelType.class)" is using
 		 * the FuelType.class to get the FuelType class object

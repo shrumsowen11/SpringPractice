@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.shrums.FuelType;
-import com.shrums.Dao.FuelService;
+import com.shrums.dao.FuelService;
+
 
 public class DeleteFuelType {
 	
@@ -24,17 +24,14 @@ public class DeleteFuelType {
 		 * 
 		 * */
 
-		fuelService.delete();
+		//fuelService.delete();
 		
-		System.out.println("\n\n\n************************ "+ count + " As shown below: ************************");
+		//System.out.println("\n\n\n************************ "+ count + " As shown below: ************************");
 		fuelService.findAll().forEach(System.out::println);
 	
 	
 		
 		
-		public void deleteById(int fid) {
-			fuelTypeDao.deleteById(fid);
-		}
 	}
 
 }

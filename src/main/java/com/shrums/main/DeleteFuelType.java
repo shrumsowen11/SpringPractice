@@ -24,17 +24,14 @@ public class DeleteFuelType {
 		 * 
 		 * */
 
-		fuelService.delete();
+		//fuelService.delete();
 		
-		System.out.println("\n\n\n************************ "+ count + " As shown below: ************************");
+		//System.out.println("\n\n\n************************ "+ count + " As shown below: ************************");
 		fuelService.findAll().forEach(System.out::println);
 	
 	
 		
-		
-		public void deleteById(int fid) {
-			fuelTypeDao.deleteById(fid);
-		}
+	
 	}
 
 }
