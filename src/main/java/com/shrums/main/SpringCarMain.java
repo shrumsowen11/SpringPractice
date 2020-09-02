@@ -20,7 +20,7 @@ public class SpringCarMain {
 		System.out.println("**************** ApplicationContext ******************");
 		Car honda = (Car) applicationContext.getBean("honda"); 
 		//("honda") --> this is the "id" part written in the .xml bean tags
-		// "applicationContext.getBean("honda");" this just creates the object files(address)
+		// "applicationContext.getBean("honda");" this just creates the object files(address/in JavaHeap)
 		honda.run();
 		System.out.println(honda);
 

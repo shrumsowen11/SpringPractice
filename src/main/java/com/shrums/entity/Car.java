@@ -2,12 +2,6 @@ package com.shrums.entity;
 
 
 
-// TestingMyGitHubUpdating 
-// SecondTestingMyGitHubUpdating
-// ThirdTestingMyGitHubUpdating 
-
-
-
 public class Car {
 
 	private String name;

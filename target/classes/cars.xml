@@ -14,7 +14,7 @@
     
     <!-- These below beans gets save into the spring container which we will be making in the java src files -->    
     
-    <bean id = "honda" class = "com.shrums.Car">
+    <bean id = "honda" class = "com.shrums.entity.Car">
     <property name = "name" value = "honda" />
     <property name = "color" value = "silver" />
     <property name = "price" value = "16000.0" />
@@ -25,7 +25,7 @@
     </bean>
     <!-- /SpringPractise/src/main/java/com/shrums/Car.java -->
     
-    <bean id = "toyota" class = "com.shrums.Car">
+    <bean id = "toyota" class = "com.shrums.entity.Car">
     <property name = "name" value = "toyota" />
     <property name = "color" value = "brown" />
     <property name = "price" value = "27000.0" />
@@ -35,10 +35,10 @@
     
     </bean>
     
-    <bean id = "gas" class = "com.shrums.FuelType">
-    <property name = "gasoline" value = "gas" />
-    <property name = "gallons" value = "20 gals" />
-    
+    <bean id = "gas" class = "com.shrums.entity.FuelType">
+    <property name = "gas" value = "gasoline" />
+    <property name = "gallons" value = "20" />
+     
     
     </bean>
         
