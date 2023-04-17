@@ -11,7 +11,7 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.source>11</maven.compiler.source>
 
-		<springframework.spring>5.2.23.RELEASE</springframework.spring>
+		<springframework.spring>5.2.24.RELEASE</springframework.spring>
 	</properties>
 
 	<dependencies>
